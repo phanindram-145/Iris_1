@@ -11,12 +11,12 @@ module data_producing_block (
     always @(posedge clk) begin
         if (rst) begin
             valid_out <= 1'b0;
-            data_out  <= 8'd0;
+            data_out  <= 8'h0;
         end
         else begin
             if (ready_in) begin
                 valid_out <= 1'b1;
-                data_out  <= data_out + 8'd1;
+                data_out  <= data_out + 8'h1;
             end
             // else: hold current valid_out and data_out
         end
